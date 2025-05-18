@@ -12,8 +12,15 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SignupImport } from './routes/signup'
+import { Route as RanksImport } from './routes/ranks'
+import { Route as ProfileImport } from './routes/profile'
 import { Route as LoginImport } from './routes/login'
+import { Route as LogImport } from './routes/log'
+import { Route as LeaderboardImport } from './routes/leaderboard'
 import { Route as DashboardImport } from './routes/dashboard'
+import { Route as ContributorsImport } from './routes/contributors'
+import { Route as ContributionsImport } from './routes/contributions'
+import { Route as AdminImport } from './routes/admin'
 import { Route as IndexImport } from './routes/index'
 import { Route as DemoTanstackQueryImport } from './routes/demo.tanstack-query'
 import { Route as DemoTableImport } from './routes/demo.table'
@@ -26,15 +33,57 @@ const SignupRoute = SignupImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const RanksRoute = RanksImport.update({
+  id: '/ranks',
+  path: '/ranks',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProfileRoute = ProfileImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const LoginRoute = LoginImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => rootRoute,
 } as any)
 
+const LogRoute = LogImport.update({
+  id: '/log',
+  path: '/log',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LeaderboardRoute = LeaderboardImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DashboardRoute = DashboardImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContributorsRoute = ContributorsImport.update({
+  id: '/contributors',
+  path: '/contributors',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContributionsRoute = ContributionsImport.update({
+  id: '/contributions',
+  path: '/contributions',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AdminRoute = AdminImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,6 +116,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminImport
+      parentRoute: typeof rootRoute
+    }
+    '/contributions': {
+      id: '/contributions'
+      path: '/contributions'
+      fullPath: '/contributions'
+      preLoaderRoute: typeof ContributionsImport
+      parentRoute: typeof rootRoute
+    }
+    '/contributors': {
+      id: '/contributors'
+      path: '/contributors'
+      fullPath: '/contributors'
+      preLoaderRoute: typeof ContributorsImport
+      parentRoute: typeof rootRoute
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -74,11 +144,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardImport
       parentRoute: typeof rootRoute
     }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardImport
+      parentRoute: typeof rootRoute
+    }
+    '/log': {
+      id: '/log'
+      path: '/log'
+      fullPath: '/log'
+      preLoaderRoute: typeof LogImport
+      parentRoute: typeof rootRoute
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileImport
+      parentRoute: typeof rootRoute
+    }
+    '/ranks': {
+      id: '/ranks'
+      path: '/ranks'
+      fullPath: '/ranks'
+      preLoaderRoute: typeof RanksImport
       parentRoute: typeof rootRoute
     }
     '/signup': {
@@ -109,8 +207,15 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/contributions': typeof ContributionsRoute
+  '/contributors': typeof ContributorsRoute
   '/dashboard': typeof DashboardRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/log': typeof LogRoute
   '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/ranks': typeof RanksRoute
   '/signup': typeof SignupRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -118,8 +223,15 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/contributions': typeof ContributionsRoute
+  '/contributors': typeof ContributorsRoute
   '/dashboard': typeof DashboardRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/log': typeof LogRoute
   '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/ranks': typeof RanksRoute
   '/signup': typeof SignupRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -128,8 +240,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/contributions': typeof ContributionsRoute
+  '/contributors': typeof ContributorsRoute
   '/dashboard': typeof DashboardRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/log': typeof LogRoute
   '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/ranks': typeof RanksRoute
   '/signup': typeof SignupRoute
   '/demo/table': typeof DemoTableRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -139,24 +258,45 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
+    | '/contributions'
+    | '/contributors'
     | '/dashboard'
+    | '/leaderboard'
+    | '/log'
     | '/login'
+    | '/profile'
+    | '/ranks'
     | '/signup'
     | '/demo/table'
     | '/demo/tanstack-query'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
+    | '/contributions'
+    | '/contributors'
     | '/dashboard'
+    | '/leaderboard'
+    | '/log'
     | '/login'
+    | '/profile'
+    | '/ranks'
     | '/signup'
     | '/demo/table'
     | '/demo/tanstack-query'
   id:
     | '__root__'
     | '/'
+    | '/admin'
+    | '/contributions'
+    | '/contributors'
     | '/dashboard'
+    | '/leaderboard'
+    | '/log'
     | '/login'
+    | '/profile'
+    | '/ranks'
     | '/signup'
     | '/demo/table'
     | '/demo/tanstack-query'
@@ -165,8 +305,15 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  ContributionsRoute: typeof ContributionsRoute
+  ContributorsRoute: typeof ContributorsRoute
   DashboardRoute: typeof DashboardRoute
+  LeaderboardRoute: typeof LeaderboardRoute
+  LogRoute: typeof LogRoute
   LoginRoute: typeof LoginRoute
+  ProfileRoute: typeof ProfileRoute
+  RanksRoute: typeof RanksRoute
   SignupRoute: typeof SignupRoute
   DemoTableRoute: typeof DemoTableRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
@@ -174,8 +321,15 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  ContributionsRoute: ContributionsRoute,
+  ContributorsRoute: ContributorsRoute,
   DashboardRoute: DashboardRoute,
+  LeaderboardRoute: LeaderboardRoute,
+  LogRoute: LogRoute,
   LoginRoute: LoginRoute,
+  ProfileRoute: ProfileRoute,
+  RanksRoute: RanksRoute,
   SignupRoute: SignupRoute,
   DemoTableRoute: DemoTableRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
@@ -192,8 +346,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/admin",
+        "/contributions",
+        "/contributors",
         "/dashboard",
+        "/leaderboard",
+        "/log",
         "/login",
+        "/profile",
+        "/ranks",
         "/signup",
         "/demo/table",
         "/demo/tanstack-query"
@@ -202,11 +363,32 @@ export const routeTree = rootRoute
     "/": {
       "filePath": "index.tsx"
     },
+    "/admin": {
+      "filePath": "admin.tsx"
+    },
+    "/contributions": {
+      "filePath": "contributions.tsx"
+    },
+    "/contributors": {
+      "filePath": "contributors.tsx"
+    },
     "/dashboard": {
       "filePath": "dashboard.tsx"
     },
+    "/leaderboard": {
+      "filePath": "leaderboard.tsx"
+    },
+    "/log": {
+      "filePath": "log.tsx"
+    },
     "/login": {
       "filePath": "login.tsx"
+    },
+    "/profile": {
+      "filePath": "profile.tsx"
+    },
+    "/ranks": {
+      "filePath": "ranks.tsx"
     },
     "/signup": {
       "filePath": "signup.tsx"
