@@ -11,13 +11,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-gradient-to-b from-[#F45C43] to-[#EB3349] text-white shadow-[0_6px_0_0_#e57368,0_2px_8px_0_rgba(244,92,67,0.25)] relative overflow-hidden active:translate-y-1 active:shadow-[0_2px_0_0_#e57368,0_1px_4px_0_rgba(244,92,67,0.18)] hover:translate-y-1 hover:shadow-[0_2px_0_0_#e57368,0_1px_4px_0_rgba(244,92,67,0.18)]',
+          'bg-gradient-to-b from-[#DAFF01] to-[#bfc900] text-black shadow-[0_6px_0_0_#f8ff7a,0_2px_8px_0_rgba(248,255,122,0.25)] relative overflow-hidden active:translate-y-1 active:shadow-[0_2px_0_0_#f8ff7a,0_1px_4px_0_rgba(248,255,122,0.18)] hover:translate-y-1 hover:shadow-[0_2px_0_0_#f8ff7a,0_1px_4px_0_rgba(248,255,122,0.18)]',
         destructive:
           'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
           'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         secondary:
-          'bg-white/10 text-[#EB3349] border border-[#EB3349] shadow-none hover:bg-[#EB3349]/10 hover:text-[#EB3349]',
+          'bg-white/10 text-[#DAFF01] border border-[#DAFF01] shadow-none hover:bg-[#DAFF01]/10 hover:text-[#bfc900]',
         ghost:
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
