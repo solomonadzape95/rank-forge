@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Bars3BottomLeftIcon,
-  Bars3Icon,
   RadioIcon,
 } from '@heroicons/react/24/outline'
 import { Link, useLocation } from '@tanstack/react-router'

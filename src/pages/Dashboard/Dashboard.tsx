@@ -1,7 +1,8 @@
 import {
   ArrowRightIcon,
+  BellIcon,
+  ChartBarIcon,
   CheckBadgeIcon,
-  CheckCircleIcon,
   ClockIcon,
   DocumentPlusIcon,
   PlusIcon,
@@ -10,14 +11,13 @@ import {
 import { Link } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar'
-import UserProfileCard from '@/components/landing/UserProfileCard'
 
-const mockUser = {
-  name: 'Alex Johnson',
-  email: 'alex.j@example.com',
-  avatarUrl: '/avatars/1.png',
-  totalScore: 1550,
-}
+// const mockUser = {
+//   name: 'Alex Johnson',
+//   email: 'alex.j@example.com',
+//   avatarUrl: '/avatars/1.png',
+//   totalScore: 1550,
+// }
 
 const mockSubmissions = [
   {
@@ -64,15 +64,35 @@ export default function Dashboard() {
     <div className="min-h-screen w-full bg-[#111113] flex flex-col items-center">
       <DashboardNavbar />
       {/* Profile Summary */}
-      <div className="px-5 w-full mt-8">
-        <div className=" w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-5 mb-10">
-          <div className="col-span-2 h-full">
-            <UserProfileCard
-              name={mockUser.name}
-              email={mockUser.email}
-              avatarUrl={mockUser.avatarUrl}
-              contributions={mockUser.totalScore}
-            />
+      <div className="flex flex-col px-5 w-full mt-8 h-full">
+        <div className="h-[calc(100vh-10rem)] w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-5 mb-10">
+          <div className="col-span-2 h-96 md:h-full flex flex-col-reverse md:flex-row lg:flex-col-reverse bg-[#18181b] rounded-2xl overflow-hidden shadow-lg p-4">
+            <div className="w-full md:w-1/2 lg:w-full p-8 flex flex-col justify-center">
+              <div className="mb-4">
+                <ChartBarIcon className="w-14 h-14 text-[#DAFF01]" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Join the Leaderboard
+              </h3>
+              <p className="text-gray-400">
+                Get a place on the public leaderboard with the score from your
+                contribution.
+              </p>
+            </div>
+
+            <div className=" flex-1 bg-[#DAFF01] flex items-center justify-center relative rounded-xl">
+              <div className="absolute -right-4 -bottom-4 opacity-20">
+                <TrophyIcon className="w-36 h-36 text-black" />
+              </div>
+              <div className="relative flex gap-3 z-10">
+                <span className="absolute -top-2 -right-2 bg-black text-white p-3 rounded-full text-md shadow">
+                  <BellIcon className="w-10 h-10 text-white" />
+                </span>
+                <span className="absolute -top-12 left-0 w-30 h-16 rounded-br-lg rounded-tl-lg rounded-tr-lg shadow flex items-center bg-white p-2 text-black font-semibold">
+                  You moved up 10 places!
+                </span>
+              </div>
+            </div>
           </div>
           {/* Quick Actions */}
           <div className="col-span-3 flex flex-col gap-6 justify-between bg-[#18181b] rounded-2xl shadow-lg p-5">
@@ -135,7 +155,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 flex items-center gap-3 flex-col" >
+          <div className="col-span-1 flex items-center gap-3 flex-col">
             <div className="col-span-1 flex flex-col items-center bg-[#18181b] rounded-2xl shadow-lg p-4 hover:cursor-pointer hover:scale-[101%] transition-all duration-300 h-56">
               <div className="h-2/3 flex items-center justify-center mb-4 gap-6 bg-[#DAFF01] w-full rounded-xl">
                 <DocumentPlusIcon className="w-14 h-14 text-black" />
