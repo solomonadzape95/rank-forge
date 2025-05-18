@@ -1,6 +1,6 @@
 import {
   ArrowRightIcon,
-  BellIcon,
+  
   ChartBarIcon,
   CheckBadgeIcon,
   ClockIcon,
@@ -12,12 +12,12 @@ import { Link } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 import DashboardNavbar from '@/components/dashboard/DashboardNavbar'
 
-// const mockUser = {
-//   name: 'Alex Johnson',
-//   email: 'alex.j@example.com',
-//   avatarUrl: '/avatars/1.png',
-//   totalScore: 1550,
-// }
+const mockUser = {
+  name: 'Alex Johnson',
+  email: 'alex.j@example.com',
+  avatarUrl: '/avatars/1.png',
+  totalScore: 1550,
+}
 
 const mockSubmissions = [
   {
@@ -72,7 +72,7 @@ export default function Dashboard() {
                 <ChartBarIcon className="w-14 h-14 text-[#DAFF01]" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
-                Join the Leaderboard
+                {mockUser.name}
               </h3>
               <p className="text-gray-400">
                 Get a place on the public leaderboard with the score from your
@@ -81,17 +81,11 @@ export default function Dashboard() {
             </div>
 
             <div className=" flex-1 bg-[#DAFF01] flex items-center justify-center relative rounded-xl">
-              <div className="absolute -right-4 -bottom-4 opacity-20">
-                <TrophyIcon className="w-36 h-36 text-black" />
-              </div>
-              <div className="relative flex gap-3 z-10">
-                <span className="absolute -top-2 -right-2 bg-black text-white p-3 rounded-full text-md shadow">
-                  <BellIcon className="w-10 h-10 text-white" />
-                </span>
-                <span className="absolute -top-12 left-0 w-30 h-16 rounded-br-lg rounded-tl-lg rounded-tr-lg shadow flex items-center bg-white p-2 text-black font-semibold">
-                  You moved up 10 places!
-                </span>
-              </div>
+              <img
+                src={mockUser.avatarUrl}
+                alt="User Avatar"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           {/* Quick Actions */}
