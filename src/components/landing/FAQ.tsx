@@ -1,9 +1,5 @@
 import { useState } from 'react'
-import {
-  MinusIcon,
-  PlusCircleIcon,
-  PlusIcon,
-} from '@heroicons/react/24/outline'
+import { PlusCircleIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   {
@@ -59,7 +55,7 @@ export default function FAQ() {
             </span>
             <span className=" self-start flex items-center absolute right-5 top-2 md:top-4">
               <PlusCircleIcon
-                className={`${openItem === index ? 'rotate-45 text-gray-400' : 'text-[#7F4A8E] '}  transition-all duration-300 w-8 h-8 md:w-10 md:h-10`}
+                className={`${openItem === index ? 'rotate-45 text-gray-400' : 'text-[#DAFF01] '}  transition-all duration-300 w-8 h-8 md:w-10 md:h-10`}
               />
             </span>
           </span>
