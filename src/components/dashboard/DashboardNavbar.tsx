@@ -1,11 +1,9 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import {
-  ChartBarIcon,
   CheckCircleIcon,
   HomeIcon,
   ListBulletIcon,
   RadioIcon,
-  UserIcon,
 } from '@heroicons/react/24/outline'
 
 const links = [
@@ -20,27 +18,15 @@ const links = [
     url: '/log',
   },
   {
-    icon: <ChartBarIcon className="w-6 h-6 " />,
-    name: 'Leaderboard',
-    url: '/ranks',
-  },
-
-  {
     icon: <CheckCircleIcon className="w-6 h-6 " />,
     name: 'Contribution',
     url: '/contributions',
-  },
-
-  {
-    icon: <UserIcon className="w-6 h-6 " />,
-    name: 'Profile',
-    url: '/profile',
   },
 ]
 export default function DashboardNavbar() {
   const pathname = useLocation().pathname
   return (
-    <div className=" flex items-center justify-between top-0 w-full px-5 py-3">
+    <div className="sticky bg-[#111113] top-0 z-50 backdrop-blur-xl flex items-center justify-between w-full px-5 py-3">
       <div className="flex items-center gap-2 ">
         <span className="text-xl font-semibold font-mono">
           <RadioIcon className="w-6 h-6 text-[#DAFF01]" />
