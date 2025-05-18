@@ -2,45 +2,16 @@ import {
   BellIcon,
   ChartBarIcon,
   CheckBadgeIcon,
-  FolderMinusIcon,
-  LinkIcon,
   ListBulletIcon,
-  QueueListIcon,
-  ShareIcon,
-  StarIcon,
   TrophyIcon,
   UserIcon,
   UserPlusIcon,
 } from '@heroicons/react/24/outline'
-import React, { useEffect, useRef, useState } from 'react'
 
-const steps = [
-  {
-    label: 'Step 1',
-    title: 'Sign Up & Connect',
-    description:
-      "Create your account and connect your GitHub profile in seconds. We'll automatically start tracking your public contributions and progress.",
-    image: '/signup.gif',
-  },
-  {
-    label: 'Step 2',
-    title: 'Log Contributions',
-    description:
-      'Push code, open issues, and make pull requests. Your activity is logged and scored in real time as you contribute to open source projects.',
-    image: '/logging.gif',
-  },
-  {
-    label: 'Step 3',
-    title: 'Climb the Leaderboard',
-    description:
-      'See your progress, earn XP, and rise through the ranks. Compete with others and get recognized for your impact!',
-    image: '/winners.gif',
-  },
-]
 
 export default function HowItWorks() {
   return (
-    <div className="w-10/12 mx-auto">
+    <div className="w-10/12 mx-auto mb-20">
       <section className="flex flex-col items-start justify-center">
         <h2 className="text-4xl md:text-5xl font-semibold text-left mb-6">
           How It Works
@@ -59,7 +30,7 @@ export default function HowItWorks() {
           <div className=" flex flex-col-reverse h-96 md:h-auto md:flex-row bg-[#18181b] rounded-2xl shadow-lg p-4">
             <div className="flex-1 p-8 flex flex-col justify-center">
               <div className="mb-4">
-                <UserPlusIcon className="w-10 h-10 md:w-14 md:h-14 text-white" />
+                <UserPlusIcon className="w-10 h-10 md:w-14 md:h-14 text-[#DAFF01]" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
                 Sign Up & Connect
@@ -103,7 +74,7 @@ export default function HowItWorks() {
             </div>{' '}
             <div className="flex-1 p-8 flex flex-col justify-center">
               <div className="mb-4">
-                <ListBulletIcon className="w-14 h-14 text-white" />
+                <ListBulletIcon className="w-14 h-14 text-[#DAFF01]" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
                 Log Contributions
@@ -118,7 +89,7 @@ export default function HowItWorks() {
         <div className="h-96 md:h-auto flex flex-col-reverse md:flex-row lg:flex-col-reverse bg-[#18181b] rounded-2xl overflow-hidden shadow-lg p-4">
           <div className="w-full md:w-1/2 lg:w-full p-8 flex flex-col justify-center">
             <div className="mb-4">
-              <ChartBarIcon className="w-14 h-14 text-white" />
+              <ChartBarIcon className="w-14 h-14 text-[#DAFF01]" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">
               Join the Leaderboard
