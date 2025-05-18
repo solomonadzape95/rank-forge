@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@tanstack/react-router'
 import { Button } from '../ui/button'
 
 const Hero: React.FC = () => {
@@ -8,9 +9,7 @@ const Hero: React.FC = () => {
         <h1 className=" text-6xl font-bold text-[#ebebeb]">
           Shine the spotlight on{' '}
           <span className="relative inline-block">
-            <span className="relative z-10 text-[#DAFF01]">
-              your work
-            </span>
+            <span className="relative z-10 text-[#DAFF01]">your work</span>
             <img
               src="/swipe.png"
               alt="underline"
@@ -21,7 +20,9 @@ const Hero: React.FC = () => {
         <p className="text-lg text-gray-400">
           Bring your contributions to the forefront with RankForge
         </p>
-        <Button size="lg">Get Started</Button>
+        <Button size="lg">
+          <Link to="/login">Get Started</Link>
+        </Button>
       </section>
       <section className="px-10">
         <img

@@ -1,5 +1,6 @@
 import React from 'react'
 import { RadioIcon } from '@heroicons/react/24/outline'
+import { Link } from '@tanstack/react-router'
 import { Button } from '../ui/button'
 
 const Navbar: React.FC = () => {
@@ -27,7 +28,9 @@ const Navbar: React.FC = () => {
           </a>
         </div>
         <div>
-          <Button size="default">Log in/Sign up</Button>
+          <Button size="default">
+            <Link to="/login">Log in/Sign up</Link>
+          </Button>
         </div>
       </div>
     </nav>
